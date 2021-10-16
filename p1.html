@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitive Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="piano.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        font-family: helvetica;
+        height: 100%;
+        background: linear-gradient(45deg, #50a7c2, #7dd56f);
+    }
+
+    #myFooter {
+        bottom: 0;
+        position: sticky;
+        width: 100%;
+        /* margin-bottom: 0px; */
+    }
+
+    button {
+        margin: 10px;
+    }
+
+    .header {
+        flex-direction: row;
+        align-items: center;
+        align-self: center;
+        justify-content: center;
+        display: flex;
+        position: sticky;
+        top: 0;
+
+    }
+
+    #small_logo {
+        /* align-self: center; */
+        /* justify-content: center;
+        justify-self: center;
+        justify-items: center; */
+        margin-bottom: 2%;
+        margin-left: 18%;
+        /* margin-top:0; */
+    }
+
+    .container_buttons {
+        border-radius: 24px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #btns {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+
+<body>
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+
+            </span>
+        </button>
+        <img src="abc.PNG" width="6%" style="border-radius: 100%;margin-left:2%;float:left;" alt="">
+        <div class="container text-center">
+            <b class="navbar-brand text-center tskName" id="task_name" style="font-size:5vw;padding:0px;margin-left:30%;">Task Name</b>
+            <span class="alert alert-light" style="float:left;font-size:2vw;">00:30</span>
+
+        </div>
+
+    </nav> -->
+
+    <!-- header -->
+    <nav class=" bg-dark" style="max-height:10%;">
+        <!-- <div class="container" style="align-items: center; ">
+            <img src="pqrs.PNG" style="margin-left: 10%;" width="80%" height="100vw" alt="">
+        </div> -->
+        <div class="container text-center bg-dark text-light" style="max-height:7%;padding-top:1.2%;">
+            <img src="abc.PNG" id="small_logo" width="5%" style="border-radius: 100%;" alt="">
+            <span class="navbar-brand" id="task_name" style="font-size:3vw;" href="#"></span>
+            <span class="alert alert-light" style="float:right;font-size:2vw;" id="clock"></span>
+            <!-- <span class="navbar-brand" style="float:right;font-size:1.5vw;margin-top:1.2%;">13:48:00PM</span> -->
+        </div>
+    </nav>
+    <!-- header finish-->
+
+    <!-- page1 -->
+    <div class="container" id="page1" style="display:block;">
+
+        <div class="container bg-dark text-light"
+            style=" margin-top:4%;font-family:helvetica;font-size:2.4vw;border-radius:24px;padding:4%;">
+            <div id="que" class="container bg-light text-dark" style="border:solid 1px green; ">
+                <b> Que. </b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam impedit fugit harum
+                consequuntur non libero sunt incidunt alias quae sit laboriosam explicabo maxime magnam voluptatibus
+                tenetur sed eum, dolorum reprehenderit?
+            </div>
+            <div class="container" style=" margin-top:2%; font-size:2vw ; ">
+                <button id="opa" class="text-dark btn btn-light" style="font-family:helvetica;font-size:2vw;"> option a
+                </button>
+                <button id="opb" class=" btn btn-light text-dark" style="font-family:helvetica;font-size:2vw;"> option b
+                </button>
+                <button id="opc" class="text-dark btn btn-light" style="font-family:helvetica;font-size:2vw;"> option c
+                </button>
+                <button id="opd" class="text-dark btn btn-light" style="font-family:helvetica;font-size:2vw;"> option d
+                </button>
+            </div>
+        </div>
+        <div class="container_buttons" style=" padding:10px;">
+            <!-- <button id="prev_question" class="text-dark btn btn-light"
+                style="font-family:helvetica;font-size:2vw;"> preveous</button> -->
+            <button id="skip_task" class="text-dark btn btn-light" style="font-family:helvetica;font-size:2vw;"> Skip
+                task</button>
+
+            <button id="next_question" class="text-dark btn btn-light" style="font-family:helvetica;font-size:2vw;">
+                next</button>
+
+        </div>
+    </div>
+
+    <!-- page2 -->
+    <div class="container" id="page2" style="display:none">
+        <ul class="container text-center" id="piano">
+            <li class="white  b" style="background:white;" id="a">a</li>
+
+            <li class="black   as" style="background:   black" id="b">b</li>
+            <li class="white  a" style="background:white;" id="c">c</li>
+
+            <li class="black   gs" style="background:   black" id="d">d</li>
+            <li class="white  g" style="background:white;" id="e">e</li>
+
+            <li class="black   fs" style="background:   black" id="f">f</li>
+            <li class="white  f" style="background:white;" id="g">g</li>
+
+            <li class="black   ds" style="background:   black" id="h">h</li>
+            <li class="white  d" style="background:white;" id="i">i</li>
+
+            <li class="black   cs" style="background:   black" id="j">j</li>
+            <li class="white  c" style="background:white;" id="k">k</li>
+
+            <li class="black   cs" style="background:   black" id="l">l</li>
+            <li class="white  f" style="background:white;" id="m">m</li>
+
+            <li class="black   cs" style="background:   black" id="n">n</li>
+            <li class="white  c" style="background:white;" id="o">o</li>
+
+            <li class="black   cs" style="background:   black" id="p">p</li>
+            <li class="white  f" style="background:white;" id="q">q</li>
+
+            <li class="black   cs" style="background:   black" id="r">r</li>
+            <li class="white  c" style="background:white;" id="s">s</li>
+
+            <li class="black   cs" style="background:   black" id="t">t</li>
+            <li class="white  f" style="background:white;" id="u">u</li>
+
+            <li class="black   cs" style="background:   black" id="v">v</li>
+            <li class="white  c" style="background:white;" id="w">w</li>
+
+            <li class="black   cs" style="background:   black" id="x">x</li>
+            <li class="white  f" style="background:white;" id="y">y</li>
+
+            <li class="black   cs" style="background:   black" id="z">z</li>
+            <li class="white  f" style="background:white;" id="."></li>
+            <!-- <button ></button> -->
+        </ul>
+
+        <div class="container">
+            <textarea oninput="KeyPress()" class="form-contro" name="text" id="keyboard" cols="30"
+                rows="4">click here</textarea>
+        </div>
+
+        <div class="container_buttons" style=" padding:10px;">
+            <button id="skip_task" onclick="for_next_page()" class="text-dark btn btn-light"
+                style="font-family:helvetica;font-size:2vw;"> Skip
+                task</button>
+        </div>
+
+    </div>
+
+
+
+    <!-- page3 -->
+    <div class="container" id="page3" style="display:none">
+        <div class="container">
+            <p class="alert alert-success" id="ques2">hello how are you</p>
+            <div class="words" contenteditable>
+                <p id="ans" class="alert alert-primary"></p>
+            </div>
+        </div>
+
+        <div class="container text-center" id="btns">
+            <button class="btn btn-outline-primary" id="start">start</button>
+            <button class="btn btn-outline-success" id="submit">submit</button>
+        </div>
+        <div class="container_buttons" style=" padding:10px;">
+            <button id="skip_task" onclick="for_next_page()" class="text-dark btn btn-light"
+                style="font-family:helvetica;font-size:2vw;"> Skip
+                task</button>
+        </div>
+    </div>
+
+
+    <!-- page 4-->
+    <div class="container" id="page4" style="display:none">
+        <div class="container form-control">
+            
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"></span>
+                    <input type="text" class="form-control" id="u_name" placeholder="Name" aria-label="Username"
+                        aria-describedby="basic-addon1">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" id="u_email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" id="u_address" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">City</label>
+                    <input type="text" id="u_city" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">State</label>
+                    <select id="u_state" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>India</option>
+                        <option>brazil</option>
+                        <option>asturalia</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Accepet terms and conditions
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button  id="submit" onclick="submit_btn()" class="btn btn-primary">submit</button>
+                </div>
+            
+        </div>
+    </div>
+
+
+    <div class="container" id="page5" style="display:none">
+        <div class="container1" style="background-color:white">
+
+            <style type='text/css'>
+                .container1 {
+                    border: 20px solid tan;
+                    width: 750px;
+                    height: 563px;
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+
+                .logo {
+                    color: tan;
+                }
+
+                .marquee {
+                    color: tan;
+                    font-size: 48px;
+                    margin: 20px;
+                }
+
+                .assignment {
+                    margin: 20px;
+                }
+
+                .person {
+                    border-bottom: 2px solid black;
+                    font-size: 32px;
+                    font-style: italic;
+                    margin: 20px auto;
+                    width: 400px;
+                }
+
+                .reason {
+                    margin: 20px;
+                }
+            </style>
+
+            <div class="container1 container">
+                <h1 class="logo ">
+                    congnitive test portal
+                </h1>
+
+                <h2 class="marquee">
+                    Certificate of Completion
+                </h2>
+
+                <div class="assignment">
+                    This certificate is presented to
+                </div>
+
+                <div class="person" id="c_name">
+                    
+                </div>
+                <h1>Score of Task 1</h1>
+            
+                <div>
+                    <span class="btn btn-success">Aptitude test Res: </span>
+                    <span id="score1"></span>
+                </div>
+                <h1>Score of Task 2</h1>
+                <div>
+                    <span class="btn btn-primary">Typing Speed( in cps) : </span>
+                    <span id="speed"></span>
+                    <span class="btn btn-secondary">Accuracy( in %) : </span>
+                    <span id="accuracy"></span>
+                </div>
+                <h1>Score of Task 3</h1>
+                <div>
+                    <span class="btn btn-warning">Consistency (in %) : </span>
+                    <span id="consistency"></span>
+                </div>
+                
+
+                <div class="reason" id="c_result">
+                    For deftly defying the laws of gravity<br />
+                    and flying high
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- done task -->
+    <div class="container" id="done_task" style="display:none">
+        <h1 id="done_task_h1"></h1>
+        <button id="btn_next_task" class="text-dark btn btn-light" style="font-family:helvetica;font-size:2vw;">
+            Next Task </button>
+    </div>
+
+
+    <!-- footer -->
+    <footer class="text-center text-lg-dark bg-dark text-light myFooter" id="myfooter" style=" margin-top:6%;">
+
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="">Cognitive Test Portal</a>
+            &nbsp;&nbsp;&nbsp;
+            <b class="text-uppercase fw-bold mb-4">
+                Contact:
+            </b>
+            info@example.com
+        </div>
+    </footer>
+
+
+
+    <script src="try.js"></script>
+
+</body>
+
+</html>
