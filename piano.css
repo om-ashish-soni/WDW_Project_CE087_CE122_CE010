@@ -8,10 +8,11 @@ body {
 }
 
 ul {
-  height: 18.875em;
+  height: 24vw;
   /* width: 38em; */
-  margin: 5em auto;
-  padding: 3em 0 0 3em;
+  margin: 5vw;
+  padding-left: 10vw;
+  padding-right: 5vw;
   position: relative;
   border: 1px solid #160801;
   border-radius: 1em;
@@ -34,9 +35,10 @@ li {
 }
 
 ul .white {
-  height: 16em;
-  width: 4em;
+  height: 20vw;
+  width: 5vw;
   z-index: 1;
+  font-size:1.5vw;
   border-left: 1px solid #bbb;
   border-bottom: 1px solid #bbb;
   border-radius: 0 0 5px 5px;
@@ -44,7 +46,13 @@ ul .white {
     0 0 3px rgba(0, 0, 0, 0.2);
   background: linear-gradient(to bottom, #eee 0%, #fff 100%);
 }
-
+.skipButtonPage2{
+  margin-bottom:10vw;
+}
+.outerBox{
+  padding-left:11%;
+  padding-right:11%;
+}
 ul .white:active {
   border-top: 1px solid #777;
   border-left: 1px solid #999;
@@ -57,8 +65,9 @@ li {
   box-shadow: 1px 2px 3px 2px gray;
 }
 .black {
-  height: 8em;
-  width: 2em;
+  height: 12vw;
+  width: 2.5vw;
+  font-size:1.5vw;
   margin: 0 0 0 -1em;
   z-index: 2;
   border: 1px solid #000;

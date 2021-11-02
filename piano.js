@@ -88,7 +88,6 @@ const fun = function(){
             TV.style.backgroundColor="black" ; //press this
     }
     ind++;
-    
 
  let keyboard=document.getElementById('keyboard');
  keyboard.addEventListener('click', function(){
@@ -98,7 +97,7 @@ const fun = function(){
     // keyboard.style.display="none";
     fun();
  })
- 
+}
 
 // keyboard.addEventListener('keyup' , keypressfun , false);
 
@@ -212,8 +211,6 @@ const KeyPress=(event)=>{
          prev_key = lastChar;
          fun();
 };
-
-//for sound
 
 
 
